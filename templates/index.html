@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" data-season="spring" data-theme="day">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japan Explorer — A Journey Through Japan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- ░░ noren curtain intro ░░ -->
+<div class="noren" id="noren">
+  <div class="noren-panel"><span>A</span></div>
+  <div class="noren-panel"><span>JOURNEY</span></div>
+  <div class="noren-panel"><span>THROUGH</span></div>
+  <div class="noren-panel"><span>JAPAN</span></div>
+  <div class="noren-seal">
+    <svg viewBox="0 0 100 100" width="76" height="76" aria-hidden="true">
+      <circle class="seal-ring" cx="50" cy="50" r="42" fill="none" stroke="#d7263d" stroke-width="5"/>
+      <path d="M30 56 h40 M50 30 v46 M36 42 h28" stroke="#d7263d" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ░░ season particles ░░ -->
+<canvas id="particles" aria-hidden="true"></canvas>
+
+<!-- ░░ header ░░ -->
+<header class="top">
+  <a class="brand" href="#top">
+    <svg class="brand-torii" viewBox="0 0 40 34" width="30" height="26" aria-hidden="true">
+      <g fill="currentColor"><rect x="4" y="4" width="32" height="3.6" rx="1.8"/><rect x="6" y="9" width="28" height="2.6" rx="1.3"/>
+      <rect x="9" y="7" width="3.4" height="26" rx="1.2"/><rect x="27.6" y="7" width="3.4" height="26" rx="1.2"/>
+      <rect x="11" y="15" width="18" height="2.4"/></g>
+    </svg>
+    <span class="brand-text"><b>Japan Explorer</b><i>Nihon no Tabi · 日本の旅</i></span>
+  </a>
+
+  <nav class="nav">
+    <a href="#primer">Culture</a>
+    <a href="#seasons">Seasons</a>
+    <a href="#explore">Places</a>
+    <a href="#phrases">Phrases</a>
+  </nav>
+
+  <div class="top-tools">
+    <div class="season-switch" role="group" aria-label="Season">
+      <button data-season="spring" class="is-on" title="Spring">Spring</button>
+      <button data-season="summer" title="Summer">Summer</button>
+      <button data-season="autumn" title="Autumn">Autumn</button>
+      <button data-season="winter" title="Winter">Winter</button>
+    </div>
+    <button id="themeBtn" class="icon-btn" title="Day / Night">☀</button>
+  </div>
+</header>
+
+<!-- ░░ hero ░░ -->
+<section class="hero" id="top">
+  <div class="scene" id="scene">
+    <svg class="layer sky" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="hsky" x1="0" y1="0" x2="0" y2="1">
+          <stop class="sky-a" offset="0"/><stop class="sky-b" offset=".55"/><stop class="sky-c" offset="1"/>
+        </linearGradient>
+        <radialGradient id="hsun"><stop offset="0" stop-color="#fff8e1"/><stop offset="1" stop-color="#ffd9a0" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="1200" height="600" fill="url(#hsky)"/>
+      <g class="stars"><circle cx="120" cy="70" r="1.6"/><circle cx="300" cy="40" r="1.2"/><circle cx="520" cy="90" r="1.5"/><circle cx="760" cy="50" r="1.2"/><circle cx="980" cy="80" r="1.6"/><circle cx="1120" cy="46" r="1.3"/><circle cx="640" cy="26" r="1"/><circle cx="430" cy="130" r="1"/></g>
+      <circle class="disc" cx="880" cy="170" r="300" fill="url(#hsun)"/>
+      <circle class="disc-core" cx="880" cy="170" r="86"/>
+    </svg>
+
+    <svg class="layer clouds" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <g class="cl cl-a" fill="#ffffff"><ellipse cx="200" cy="150" rx="120" ry="24"/><ellipse cx="280" cy="136" rx="70" ry="20"/></g>
+      <g class="cl cl-b" fill="#ffffff"><ellipse cx="760" cy="110" rx="150" ry="26"/><ellipse cx="860" cy="96" rx="84" ry="20"/></g>
+      <g class="cl cl-c" fill="#ffffff"><ellipse cx="520" cy="210" rx="100" ry="18"/></g>
+    </svg>
+
+    <svg class="layer cranes" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <g class="crane-fly"><g class="crane-wing"><path d="M0 0 q14 -12 28 0 q-14 -5 -28 0" fill="#2b2b3a"/></g></g>
+      <g class="crane-fly cf2"><g class="crane-wing"><path d="M0 0 q11 -9 22 0 q-11 -4 -22 0" fill="#2b2b3a"/></g></g>
+      <g class="crane-fly cf3"><g class="crane-wing"><path d="M0 0 q9 -7 18 0 q-9 -3 -18 0" fill="#2b2b3a"/></g></g>
+    </svg>
+
+    <svg class="layer fuji" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs><linearGradient id="hf" x1="0" y1="0" x2="0" y2="1"><stop class="fuji-a" offset="0"/><stop class="fuji-b" offset="1"/></linearGradient></defs>
+      <path d="M120 560 L480 250 q60 -52 120 0 L960 560Z" fill="url(#hf)"/>
+      <path d="M476 274 q62 -56 128 0 l44 42 q-30 22 -54 2 q-30 28 -60 2 q-30 22 -58 6Z" fill="#fdfdff"/>
+      <path d="M-120 560 L180 330 q40 -34 80 0 L520 560Z" class="hill-far"/>
+      <path d="M760 560 L1010 340 q40 -34 80 0 L1340 560Z" class="hill-far"/>
+    </svg>
+
+    <svg class="layer hills" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <path d="M0 470 q150 -60 300 -20 q150 40 300 -16 q150 -56 300 -10 q150 46 300 6 v170 H0Z" class="hill-mid"/>
+      <path d="M0 520 q200 -40 400 4 q200 44 400 -10 q200 -54 400 10 v76 H0Z" class="hill-near"/>
+    </svg>
+
+    <svg class="layer waves" viewBox="0 0 1200 240" preserveAspectRatio="none" aria-hidden="true">
+      <g class="seigaiha">
+        <path class="wv wv-1" d="M-120 120 q30 -42 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 v140 H-120Z"/>
+        <path class="wv wv-2" d="M-120 150 q34 -46 68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0 t68 0 v100 H-120Z"/>
+        <path class="wv wv-3" d="M-120 186 q28 -38 56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 t56 0 v70 H-120Z"/>
+      </g>
+    </svg>
+
+    <svg class="layer torii-layer" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <g class="torii-big">
+        <rect x="150" y="300" width="26" height="300" rx="6"/>
+        <rect x="1024" y="300" width="26" height="300" rx="6"/>
+        <rect x="100" y="268" width="1000" height="28" rx="14" class="torii-dark"/>
+        <rect x="118" y="300" width="964" height="20" rx="8"/>
+        <rect x="160" y="378" width="880" height="22" rx="8"/>
+        <rect x="578" y="268" width="30" height="112" class="torii-dark"/>
+      </g>
+      <g class="sakura-tree">
+        <path d="M70 600 q24 -120 -16 -190" class="trunk"/>
+        <path d="M58 470 q40 -26 72 -16" class="trunk thin"/>
+        <g class="bloom"><circle cx="30" cy="356" r="52"/><circle cx="104" cy="330" r="58"/><circle cx="150" cy="384" r="44"/><circle cx="66" cy="404" r="48"/><circle cx="126" cy="414" r="36"/></g>
+        <g class="bloom-light"><circle cx="54" cy="340" r="22"/><circle cx="124" cy="366" r="18"/><circle cx="94" cy="406" r="14"/></g>
+      </g>
+      <g class="lantern-row">
+        <g class="lantern"><rect x="300" y="400" width="3" height="18"/><ellipse cx="301" cy="440" rx="17" ry="21"/></g>
+        <g class="lantern l-b"><rect x="420" y="400" width="3" height="26"/><ellipse cx="421" cy="448" rx="14" ry="18"/></g>
+        <g class="lantern l-c"><rect x="800" y="400" width="3" height="20"/><ellipse cx="801" cy="442" rx="16" ry="20"/></g>
+        <g class="lantern l-d"><rect x="910" y="400" width="3" height="30"/><ellipse cx="911" cy="452" rx="13" ry="17"/></g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="dot"></span> Japan Tourism Database</p>
+    <h1 class="title">
+      <span class="latin top-latin">日本の旅 · Nihon no Tabi</span>
+      <span class="kanji-big">A Journey Through Japan</span>
+      <svg class="brush" viewBox="0 0 420 26" aria-hidden="true"><path d="M6 18 q90 -16 180 -6 q110 12 228 -6" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/></svg>
+    </h1>
+    <p class="lede">
+      Shrines in the sea, castles above cherry blossom, hot springs in the snow.
+      Search <b>{{ total }}</b> places from the <code>japan_tourism</code> database —
+      and read the culture behind them first.
+    </p>
+
+    <form class="searchbar" id="heroSearch" autocomplete="off" onsubmit="return false">
+      <span class="search-ico">⌕</span>
+      <input id="q" type="search" placeholder="Search a place — Kyoto, Mount Fuji, hot spring, castle…" aria-label="Search places">
+      <button type="button" id="luckyBtn" class="lucky" title="Show a random place">Surprise me</button>
+    </form>
+
+    <div class="quickchips" id="quickchips">
+      <button data-q="Mount Fuji">Mount Fuji</button>
+      <button data-q="Kyoto">Kyoto</button>
+      <button data-q="hot spring">Hot springs</button>
+      <button data-q="castle">Castles</button>
+      <button data-q="Tokyo">Tokyo</button>
+    </div>
+
+    <ul class="stats">
+      <li><b data-count="{{ total }}">0</b><span>Places</span></li>
+      <li><b data-count="{{ categories|length }}">0</b><span>Categories</span></li>
+      <li><b data-count="{{ regions|length }}">0</b><span>Regions</span></li>
+    </ul>
+  </div>
+
+  <a class="scroll-cue" href="#primer"><span>scroll</span><i></i></a>
+</section>
+
+<!-- ░░ culture primer ░░ -->
+<section class="primer" id="primer">
+  <header class="sec-head">
+    <p class="sec-kanji">Culture</p>
+    <h2>A primer on Japanese culture</h2>
+    <p class="sec-sub">Eight ideas that shape almost everything you will see on your trip.</p>
+  </header>
+
+  <div class="primer-grid">
+    <article class="pcard reveal" style="--d:0ms">
+      <div class="pcard-art">
+        <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="ink-ring" cx="60" cy="60" r="40" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg>
+        <span class="pk">和</span>
+      </div>
+      <h3>Wa · Harmony</h3>
+      <p>The oldest name for Japan itself. Group harmony comes before the individual — quiet trains, orderly queues, and an instinct to avoid friction in public.</p>
+    </article>
+
+    <article class="pcard reveal" style="--d:70ms">
+      <div class="pcard-art">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <path class="draw" d="M24 86 q18 -44 36 -24 q16 18 36 -18" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="92" cy="40" r="6" fill="currentColor" opacity=".5"/>
+        </svg>
+        <span class="pk">侘寂</span>
+      </div>
+      <h3>Wabi-sabi</h3>
+      <p>Beauty in the imperfect, weathered and incomplete — a cracked tea bowl mended with gold, moss on an old stone lantern, a garden left a little wild.</p>
+    </article>
+
+    <article class="pcard reveal" style="--d:140ms">
+      <div class="pcard-art">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <g class="torii-mini" fill="currentColor"><rect x="18" y="30" width="84" height="9" rx="4"/><rect x="24" y="44" width="72" height="7" rx="3"/><rect x="32" y="40" width="10" height="56" rx="3"/><rect x="78" y="40" width="10" height="56" rx="3"/><rect x="55" y="30" width="10" height="22"/></g>
+        </svg>
+        <span class="pk">神道</span>
+      </div>
+      <h3>Shinto &amp; Buddhism</h3>
+      <p>Shinto shrines (<i>jinja</i>, red torii gates) honour spirits in nature; Buddhist temples (<i>tera</i>, pagodas and incense) came from the mainland. Most people visit both.</p>
+    </article>
+
+    <article class="pcard reveal" style="--d:210ms">
+      <div class="pcard-art">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <path d="M34 54 h46 a4 4 0 0 1 4 4 v12 a22 22 0 0 1 -22 22 H52 a22 22 0 0 1 -22 -22 V58 a4 4 0 0 1 4 -4Z" fill="currentColor" opacity=".85"/>
+          <path d="M84 60 h8 a10 10 0 0 1 0 20 h-8" fill="none" stroke="currentColor" stroke-width="5"/>
+          <g class="tea-steam" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"><path d="M48 44 q6 -8 0 -16"/><path d="M62 42 q7 -9 0 -18"/><path d="M76 46 q6 -8 0 -15"/></g>
+        </svg>
+        <span class="pk">茶道</span>
+      </div>
+      <h3>Sadō · The way of tea</h3>
+      <p>A whole afternoon devoted to one bowl of matcha. Its motto, <i>ichigo ichie</i> — one time, one meeting — says every gathering happens exactly once.</p>
+    </article>
+
+    <article class="pcard reveal" style="--d:280ms">
+      <div class="pcard-art">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <g class="mini-lantern"><rect x="58" y="16" width="4" height="16" fill="currentColor"/><ellipse cx="60" cy="62" rx="28" ry="34" fill="currentColor" opacity=".85"/><rect x="36" y="34" width="48" height="6" fill="currentColor"/><rect x="36" y="84" width="48" height="6" fill="currentColor"/></g>
+        </svg>
+        <span class="pk">祭</span>
+      </div>
+      <h3>Matsuri · Festivals</h3>
+      <p>Thousands every year: portable shrines carried shoulder-high, taiko drums, grilled squid, fireworks over a river, and giant painted floats like Aomori's <i>nebuta</i>.</p>
+    </article>
+
+    <article class="pcard reveal" style="--d:350ms">
+      <div class="pcard-art">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <path d="M22 78 h76 v10 a14 14 0 0 1 -14 14 H36 a14 14 0 0 1 -14 -14Z" fill="currentColor" opacity=".8"/>
+          <g class="onsen-steam" stroke="currentColor" stroke-width="5" fill="none" stroke-linecap="round"><path d="M42 66 q8 -12 0 -22"/><path d="M60 62 q9 -13 0 -24"/><path d="M78 68 q8 -12 0 -21"/></g>
+        </svg>
+        <span class="pk">温泉</span>
+      </div>
+      <h3>Onsen etiquette</h3>
+      <p>Wash thoroughly <em>before</em> you get in, leave the swimsuit behind, tie long hair up, and never let the small towel touch the water. Then stop moving and just soak.</p>
+    </article>
+
+    <article class="pcard reveal" style="--d:420ms">
+      <div class="pcard-art">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <g class="chopsticks" stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M34 96 L84 26"/><path d="M46 100 L94 32"/></g>
+          <ellipse cx="54" cy="92" rx="30" ry="11" fill="currentColor" opacity=".25"/>
+        </svg>
+        <span class="pk">和食</span>
+      </div>
+      <h3>Washoku · Food</h3>
+      <p>Seasonal, regional and precise: Osaka's street food, Hokkaido's seafood, Kyoto's tofu temple cuisine. Say <i>itadakimasu</i> before eating, and don't tip.</p>
+    </article>
+
+    <article class="pcard reveal" style="--d:490ms">
+      <div class="pcard-art">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <path class="crane-origami" d="M26 70 l44 -18 l-10 24 l36 -8 l-24 20 l-44 4Z" fill="currentColor" opacity=".85"/>
+          <path d="M70 52 l26 -28 l-7 30Z" fill="currentColor" opacity=".6"/>
+        </svg>
+        <span class="pk">芸道</span>
+      </div>
+      <h3>Arts &amp; craft</h3>
+      <p>Ukiyo-e woodblock prints, <i>shodō</i> calligraphy, <i>ikebana</i> flower arranging, origami cranes folded by the thousand as a wish for peace and recovery.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ░░ seasons ░░ -->
+<section class="seasons" id="seasons">
+  <header class="sec-head">
+    <p class="sec-kanji">Seasons</p>
+    <h2>Four seasons, four Japans</h2>
+    <p class="sec-sub">Tap a season to repaint this page — and to see where to go in it.</p>
+  </header>
+
+  <div class="season-grid">
+    <button class="scard reveal" data-season-go="spring" data-season-filter="Spring">
+      <svg viewBox="0 0 200 130" aria-hidden="true">
+        <rect width="200" height="130" rx="14" fill="#ffe3ed"/>
+        <g fill="#ff9dbb"><circle cx="54" cy="48" r="24"/><circle cx="86" cy="36" r="20"/><circle cx="100" cy="62" r="18"/><circle cx="66" cy="70" r="20"/></g>
+        <path d="M60 92 q6 -22 -4 -34" stroke="#7a5340" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <path d="M0 100 q50 -14 100 0 q50 14 100 -4 v34 H0Z" fill="#9fd08a"/>
+        <g class="sp-pet" fill="#fff0f5"><ellipse cx="140" cy="30" rx="6" ry="4"/></g>
+        <g class="sp-pet sp2" fill="#ffc6d8"><ellipse cx="168" cy="20" rx="5" ry="3.4"/></g>
+      </svg>
+      <h3>Spring <span>Mar – May</span></h3>
+      <p>Cherry blossom (<i>sakura</i>) sweeps north for weeks. Picnics under the petals, castles in pink.</p>
+      <em class="scard-go">See spring places →</em>
+    </button>
+
+    <button class="scard reveal" data-season-go="summer" data-season-filter="Summer">
+      <svg viewBox="0 0 200 130" aria-hidden="true">
+        <rect width="200" height="130" rx="14" fill="#d9f2ff"/>
+        <circle cx="156" cy="34" r="20" fill="#ffe375"/>
+        <path d="M0 96 q50 -20 100 -2 q50 18 100 -10 v46 H0Z" fill="#5fa85a"/>
+        <g fill="#8e5ac0"><rect x="24" y="60" width="16" height="40" rx="8"/><rect x="46" y="54" width="16" height="46" rx="8"/><rect x="68" y="64" width="16" height="36" rx="8"/></g>
+        <g class="firefly" fill="#fff3a8"><circle cx="120" cy="70" r="3.4"/></g>
+        <g class="firefly ff2" fill="#fff3a8"><circle cx="150" cy="84" r="2.8"/></g>
+        <g class="firefly ff3" fill="#fff3a8"><circle cx="96" cy="58" r="2.4"/></g>
+      </svg>
+      <h3>Summer <span>Jun – Aug</span></h3>
+      <p>Hot and loud with cicadas. Lavender in Hokkaido, fireworks, and the climbing season on Fuji.</p>
+      <em class="scard-go">See summer places →</em>
+    </button>
+
+    <button class="scard reveal" data-season-go="autumn" data-season-filter="Autumn">
+      <svg viewBox="0 0 200 130" aria-hidden="true">
+        <rect width="200" height="130" rx="14" fill="#ffeAd6"/>
+        <g fill="#e0582f"><circle cx="60" cy="46" r="24"/><circle cx="92" cy="56" r="20"/><circle cx="40" cy="62" r="18"/></g>
+        <path d="M64 94 q4 -24 -4 -32" stroke="#7a5340" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <path d="M0 100 q60 -12 120 2 q40 6 80 -8 v36 H0Z" fill="#b98a4a"/>
+        <g class="au-leaf" fill="#f0894f"><path d="M150 26 q8 5 0 12 q-8 -7 0 -12Z"/></g>
+        <g class="au-leaf au2" fill="#d9542b"><path d="M176 40 q7 4 0 10 q-7 -6 0 -10Z"/></g>
+      </svg>
+      <h3>Autumn <span>Sep – Nov</span></h3>
+      <p><i>Kōyō</i> — maple hunting. Kyoto's temples turn scarlet, gorges glow, the air goes crisp.</p>
+      <em class="scard-go">See autumn places →</em>
+    </button>
+
+    <button class="scard reveal" data-season-go="winter" data-season-filter="Winter">
+      <svg viewBox="0 0 200 130" aria-hidden="true">
+        <rect width="200" height="130" rx="14" fill="#e6f1fb"/>
+        <path d="M0 92 L44 56 l30 36 L120 48 l40 44 L200 70 v60 H0Z" fill="#fdfdff"/>
+        <path d="M0 104 q50 -10 100 2 q50 12 100 -6 v30 H0Z" fill="#cfe0ef"/>
+        <g fill="#8aa6c0"><rect x="150" y="84" width="22" height="10" rx="4"/></g>
+        <g class="wi-steam" fill="#fff"><circle cx="160" cy="76" r="7" opacity=".7"/></g>
+        <g class="wi-snow" fill="#fff"><circle cx="40" cy="20" r="3"/><circle cx="90" cy="14" r="2.4"/><circle cx="136" cy="24" r="2.8"/></g>
+      </svg>
+      <h3>Winter <span>Dec – Feb</span></h3>
+      <p>Snow monkeys in steaming pools, thatched villages buried deep, the gold pavilion under white.</p>
+      <em class="scard-go">See winter places →</em>
+    </button>
+  </div>
+</section>
+
+<!-- ░░ explore ░░ -->
+<section class="explore" id="explore">
+  <header class="sec-head">
+    <p class="sec-kanji">Places</p>
+    <h2>Explore {{ total }} places</h2>
+    <p class="sec-sub">Live from your <code>japan_tourism</code> database — search, filter, then open any card to read its full description.</p>
+  </header>
+
+  <div class="filterbar">
+    <div class="field">
+      <span class="search-ico small">⌕</span>
+      <input id="q2" type="search" placeholder="Search name, Japanese name, region or description…" aria-label="Search places">
+    </div>
+    <select id="regionSel" aria-label="Region">
+      <option value="all">All regions</option>
+      {% for r in regions %}<option value="{{ r }}">{{ r }}</option>{% endfor %}
+    </select>
+    <button id="resetBtn" class="ghost">Reset</button>
+  </div>
+
+  <div class="chips" id="catChips">
+    <button class="chip is-on" data-cat="all">All places <i>{{ total }}</i></button>
+    {% for c in categories %}
+    <button class="chip" data-cat="{{ c.key }}">{{ c.en }} <i>{{ c.count }}</i></button>
+    {% endfor %}
+  </div>
+
+  <p class="resultline" id="resultline">Showing all {{ total }} places</p>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="empty" id="empty" hidden>
+    <svg viewBox="0 0 120 90" width="120" height="90" aria-hidden="true">
+      <path class="crane-origami" d="M20 56 l44 -18 l-10 24 l36 -8 l-24 20 l-44 4Z" fill="#d7263d" opacity=".75"/>
+      <path d="M64 38 l26 -28 l-7 30Z" fill="#d7263d" opacity=".5"/>
+    </svg>
+    <p><b>Place not found!</b></p>
+    <span>Try a shorter word — <i>fuji</i>, <i>kyoto</i>, <i>garden</i> — or reset the filters.</span>
+  </div>
+</section>
+
+<!-- ░░ phrases ░░ -->
+<section class="phrases" id="phrases">
+  <header class="sec-head">
+    <p class="sec-kanji">Phrases</p>
+    <h2>Ten phrases that carry you</h2>
+    <p class="sec-sub">Hover or tap a card to flip it.</p>
+  </header>
+
+  <div class="phrase-grid">
+    <div class="flip reveal"><div class="flip-in"><div class="face"><b>こんにちは</b><span>Konnichiwa</span></div><div class="back">Hello / good day</div></div></div>
+    <div class="flip reveal"><div class="flip-in"><div class="face"><b>ありがとう</b><span>Arigatō</span></div><div class="back">Thank you</div></div></div>
+    <div class="flip reveal"><div class="flip-in"><div class="face"><b>すみません</b><span>Sumimasen</span></div><div class="back">Excuse me / sorry</div></div></div>
+    <div class="flip reveal"><div class="flip-in"><div class="face"><b>お願いします</b><span>Onegaishimasu</span></div><div class="back">Please (do this for me)</div></div></div>
+    <div class="flip reveal"><div class="flip-in"><div class="face"><b>いただきます</b><span>Itadakimasu</span></div><div class="back">Said before eating</div></div></div>
+    <div class="flip reveal"><div class="flip-in"><div class="face"><b>どこですか</b><span>Doko desu ka</span></div><div class="back">Where is it?</div></div></div>
+    <div class="flip reveal"><div class="flip-in"><div class="face"><b>いくらですか</b><span>Ikura desu ka</span></div><div class="back">How much is it?</div></div></div>
+    <div class="flip reveal"><div class="flip-in"><div class="face"><b>大丈夫</b><span>Daijōbu</span></div><div class="back">It's fine / I'm OK</div></div></div>
+    <div class="flip reveal"><div class="flip-in"><div class="face"><b>おいしい</b><span>Oishii</span></div><div class="back">Delicious</div></div></div>
+    <div class="flip reveal"><div class="flip-in"><div class="face"><b>さようなら</b><span>Sayōnara</span></div><div class="back">Goodbye</div></div></div>
+  </div>
+</section>
+
+<!-- ░░ footer ░░ -->
+<footer class="foot">
+  <div class="foot-brand">
+    <b>Japan Explorer</b>
+    <span>Nihon no Tabi · Japan Tourism Explorer</span>
+  </div>
+  <div class="foot-meta">
+    <span class="badge {{ 'live' if source.mode == 'mysql' else 'file' }}">
+      {{ 'MySQL · ' ~ source.detail if source.mode == 'mysql' else 'Offline mode · reading japan_tourism.sql' }}
+    </span>
+    <span>{{ total }} places · Flask + MySQL</span>
+  </div>
+  <p class="foot-note">Itterasshai — have a good trip.</p>
+</footer>
+
+<!-- ░░ place detail panel ░░ -->
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-bg" data-close></div>
+  <article class="sheet-card" role="dialog" aria-modal="true" aria-labelledby="sheetName">
+    <button class="sheet-x" data-close aria-label="Close">✕</button>
+    <div class="sheet-art"><img id="sheetImg" src="" alt=""></div>
+    <div class="sheet-body">
+      <p class="sheet-jp" id="sheetJp"></p>
+      <h3 id="sheetName"></h3>
+      <div class="sheet-tags" id="sheetTags"></div>
+      <p class="sheet-desc" id="sheetDesc"></p>
+      <div class="sheet-actions">
+        <button id="sheetPrev" class="ghost">← Previous</button>
+        <button id="sheetNext" class="ghost">Next →</button>
+      </div>
+    </div>
+  </article>
+</div>
+
+<script>
+  window.PLACES = {{ places|tojson }};
+  window.CAT_ART = {
+    shrine: "{{ url_for('static', filename='img/shrine.svg') }}",
+    temple: "{{ url_for('static', filename='img/temple.svg') }}",
+    castle: "{{ url_for('static', filename='img/castle.svg') }}",
+    mountain: "{{ url_for('static', filename='img/mountain.svg') }}",
+    nature: "{{ url_for('static', filename='img/nature.svg') }}",
+    garden: "{{ url_for('static', filename='img/garden.svg') }}",
+    onsen: "{{ url_for('static', filename='img/onsen.svg') }}",
+    city: "{{ url_for('static', filename='img/city.svg') }}",
+    culture: "{{ url_for('static', filename='img/culture.svg') }}",
+    island: "{{ url_for('static', filename='img/island.svg') }}",
+    peace: "{{ url_for('static', filename='img/peace.svg') }}"
+  };
+  window.CAT_EN = {
+    shrine:"Shrine", temple:"Temple", castle:"Castle", mountain:"Mountain", nature:"Nature",
+    garden:"Garden & Park", onsen:"Hot Spring", city:"City Life", culture:"Culture",
+    island:"Island & Sea", peace:"Peace Memorial"
+  };
+  window.CAT_JP = {
+    shrine:"神社", temple:"寺院", castle:"城", mountain:"山", nature:"自然",
+    garden:"庭園", onsen:"温泉", city:"都市", culture:"文化", island:"島", peace:"平和"
+  };
+</script>
+<script src="{{ url_for('static', filename='js/particles.js') }}"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
