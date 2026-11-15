@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260">
+<style>
+  .wave{animation:wmove 9s linear infinite}
+  .wave2{animation:wmove 13s linear infinite reverse}
+  @keyframes wmove{from{transform:translateX(-80px)}to{transform:translateX(0)}}
+  .boat{transform-origin:center;animation:bob2 4.6s ease-in-out infinite}
+  @keyframes bob2{0%,100%{transform:translateY(0) rotate(-2.5deg)}50%{transform:translateY(-5px) rotate(2.5deg)}}
+  .foam{animation:fm 5s ease-in-out infinite}
+  @keyframes fm{0%,100%{opacity:.5;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+  .gull{animation:gl2 13s linear infinite}
+  @keyframes gl2{0%{transform:translate(430px,40px)}100%{transform:translate(-40px,14px)}}
+  .gwing{animation:gw 1.2s ease-in-out infinite}
+  @keyframes gw{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.4)}}
+</style>
+<defs>
+  <linearGradient id="sa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe9f7"/><stop offset="1" stop-color="#ffe9c9"/></linearGradient>
+  <linearGradient id="deep" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f7fa8"/><stop offset="1" stop-color="#114059"/></linearGradient>
+</defs>
+<rect width="400" height="260" fill="url(#sa)"/>
+<circle cx="86" cy="54" r="26" fill="#fff4d0" opacity=".95"/>
+<g class="gull"><g class="gwing"><path d="M0 0 q9 -8 18 0 q-9 -3 -18 0" fill="#44506b"/></g></g>
+<path d="M250 132 q30 -52 62 -40 q22 8 32 40Z" fill="#4d7a5c"/>
+<path d="M250 132 q30 -52 62 -40 q10 4 18 14 q-34 -4 -80 26Z" fill="#639a70" opacity=".8"/>
+<g fill="#d7263d"><rect x="286" y="104" width="4" height="28"/><rect x="300" y="104" width="4" height="28"/><rect x="280" y="100" width="30" height="4" rx="2"/></g>
+<rect y="130" width="400" height="130" fill="url(#deep)"/>
+<g class="wave2" fill="#4a97bd" opacity=".9">
+  <path d="M-80 150 q40 -16 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 v22 H-80Z"/>
+</g>
+<g class="wave" fill="#1f6b90">
+  <path d="M-80 176 q40 -20 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 v30 H-80Z"/>
+</g>
+<g class="foam" stroke="#ffffff" stroke-width="2.5" fill="none" opacity=".75" stroke-linecap="round">
+  <path d="M20 170 q14 -8 28 0"/><path d="M140 166 q14 -8 28 0"/><path d="M260 172 q14 -8 28 0"/><path d="M350 168 q14 -8 28 0"/>
+</g>
+<path d="M-20 206 q60 -34 120 -6 q50 24 100 2 q60 -26 120 2 q40 16 100 -6 v62 H-20Z" fill="#0d3349"/>
+<g fill="#ffffff" opacity=".9">
+  <path d="M30 212 q22 -22 44 -4 q-10 -4 -18 2 q-10 -8 -26 2Z"/>
+  <path d="M210 206 q24 -24 48 -4 q-12 -4 -20 2 q-12 -8 -28 2Z"/>
+  <path d="M330 214 q20 -20 40 -4 q-10 -4 -16 2 q-10 -8 -24 2Z"/>
+</g>
+<g class="boat"><g>
+  <path d="M150 188 h70 l-12 16 h-46Z" fill="#8a5a36"/>
+  <path d="M152 188 h66 l-4 5 h-58Z" fill="#a9754a"/>
+  <rect x="182" y="156" width="3" height="32" fill="#6b4a2a"/>
+  <path d="M185 158 q22 12 0 26Z" fill="#f6efe0"/>
+  <path d="M182 158 q-16 10 0 22Z" fill="#e8dcc4"/>
+</g></g>
+<g fill="#0d3349" opacity=".9"><path d="M60 250 q18 -14 36 0Z"/></g>
+</svg>

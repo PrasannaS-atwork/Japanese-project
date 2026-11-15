@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260">
+<style>
+  .c1{animation:m1 26s linear infinite}.c2{animation:m1 38s linear infinite}
+  @keyframes m1{from{transform:translateX(-140px)}to{transform:translateX(440px)}}
+  .ray{transform-origin:318px 66px;animation:spin 60s linear infinite;opacity:.35}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .bird2{animation:bf 16s linear infinite}
+  @keyframes bf{0%{transform:translate(-40px,30px)}100%{transform:translate(440px,-10px)}}
+  .wing{animation:wg 1s ease-in-out infinite}
+  @keyframes wg{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.35)}}
+</style>
+<defs>
+  <linearGradient id="s4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b3a6b"/><stop offset=".5" stop-color="#e76f8a"/><stop offset="1" stop-color="#ffe0b2"/></linearGradient>
+  <linearGradient id="fuji" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6f8fc4"/><stop offset="1" stop-color="#3c5c92"/></linearGradient>
+</defs>
+<rect width="400" height="260" fill="url(#s4)"/>
+<g class="ray" fill="#fff1c9"><path d="M318 66 l120 -16 v32Z"/><path d="M318 66 l-120 -16 v32Z"/><path d="M318 66 l16 -120 h-32Z"/><path d="M318 66 l16 120 h-32Z"/></g>
+<circle cx="318" cy="66" r="30" fill="#fff6dc"/>
+<g class="bird2"><g class="wing"><path d="M0 0 q8 -7 16 0 q-8 -3 -16 0" fill="#2a2a3a"/></g></g>
+<path d="M0 200 L120 88 q20 -16 40 0 L300 200Z" fill="url(#fuji)"/>
+<path d="M118 102 q22 -20 44 0 l14 14 q-10 8 -18 0 q-10 10 -20 0 q-10 8 -20 2Z" fill="#fdfdff"/>
+<path d="M240 200 L330 120 q14 -12 28 0 L400 200Z" fill="#2f4c7a" opacity=".9"/>
+<g class="c1" fill="#fff" opacity=".6"><ellipse cx="90" cy="140" rx="46" ry="10"/><ellipse cx="124" cy="134" rx="26" ry="8"/></g>
+<g class="c2" fill="#fff" opacity=".45"><ellipse cx="230" cy="166" rx="54" ry="9"/></g>
+<path d="M0 198 q100 -14 200 0 q100 14 200 0 v62 H0Z" fill="#20304d"/>
+<path d="M0 214 q120 16 240 0 q80 -10 160 6 v40 H0Z" fill="#16233a"/>
+<g fill="#ffd7e4" opacity=".9"><circle cx="34" cy="206" r="4"/><circle cx="48" cy="200" r="3"/><circle cx="24" cy="198" r="3"/></g>
+</svg>

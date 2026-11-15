@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260">
+<style>
+  .neon{animation:nf 2.4s steps(1) infinite}
+  .nb{animation-duration:1.7s}.nc{animation-duration:3.1s}.nd{animation-duration:2.1s}
+  @keyframes nf{0%,70%{opacity:1}71%,78%{opacity:.25}79%,100%{opacity:1}}
+  .train{animation:tr 5s linear infinite}
+  @keyframes tr{0%{transform:translateX(-120px)}100%{transform:translateX(420px)}}
+  .glowline{animation:gl 3s ease-in-out infinite}
+  @keyframes gl{0%,100%{opacity:.4}50%{opacity:1}}
+  .win{animation:wk 4s steps(1) infinite}
+  .w2b{animation-delay:1.3s}.w3b{animation-delay:2.6s}
+  @keyframes wk{0%,60%{opacity:.9}61%,100%{opacity:.35}}
+</style>
+<defs>
+  <linearGradient id="s8" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#140d2b"/><stop offset=".6" stop-color="#36205a"/><stop offset="1" stop-color="#7b3a6b"/></linearGradient>
+</defs>
+<rect width="400" height="260" fill="url(#s8)"/>
+<g fill="#fff" opacity=".7"><circle cx="40" cy="30" r="1.4"/><circle cx="96" cy="18" r="1"/><circle cx="150" cy="40" r="1.2"/><circle cx="250" cy="22" r="1"/><circle cx="320" cy="44" r="1.4"/><circle cx="370" cy="16" r="1"/></g>
+<circle cx="340" cy="44" r="16" fill="#fff6dc" opacity=".95"/>
+<g fill="#1b1436">
+  <rect x="10" y="120" width="46" height="140"/><rect x="62" y="150" width="38" height="110"/>
+  <rect x="106" y="96" width="52" height="164"/><rect x="166" y="136" width="42" height="124"/>
+  <rect x="214" y="110" width="48" height="150"/><rect x="268" y="152" width="40" height="108"/>
+  <rect x="314" y="124" width="54" height="136"/><rect x="372" y="160" width="28" height="100"/>
+</g>
+<g fill="#ffd978"><g class="win"><rect x="18" y="132" width="7" height="9"/><rect x="32" y="132" width="7" height="9"/><rect x="18" y="152" width="7" height="9"/><rect x="114" y="110" width="7" height="9"/><rect x="130" y="110" width="7" height="9"/><rect x="222" y="124" width="7" height="9"/><rect x="322" y="140" width="7" height="9"/></g>
+<g class="win w2b"><rect x="46" y="146" width="7" height="9"/><rect x="70" y="166" width="7" height="9"/><rect x="142" y="130" width="7" height="9"/><rect x="176" y="152" width="7" height="9"/><rect x="240" y="142" width="7" height="9"/><rect x="340" y="158" width="7" height="9"/></g>
+<g class="win w3b"><rect x="32" y="176" width="7" height="9"/><rect x="118" y="152" width="7" height="9"/><rect x="190" y="176" width="7" height="9"/><rect x="250" y="168" width="7" height="9"/><rect x="278" y="176" width="7" height="9"/><rect x="356" y="178" width="7" height="9"/></g></g>
+<g>
+  <rect x="330" y="60" width="4" height="70" fill="#d7263d" opacity=".8"/>
+  <path d="M332 56 l10 -16 h-20Z" fill="#ff6b4a"/>
+</g>
+<g class="neon"><rect x="112" y="168" width="40" height="52" rx="4" fill="#ff2e6c" opacity=".9"/><g fill="#fff6" ><rect x="120" y="176" width="24" height="5"/><rect x="120" y="188" width="24" height="5"/><rect x="120" y="200" width="24" height="5"/></g></g>
+<g class="neon nb"><rect x="222" y="178" width="34" height="46" rx="4" fill="#23d5ff" opacity=".85"/><g fill="#0a2230" opacity=".7"><rect x="230" y="186" width="18" height="5"/><rect x="230" y="198" width="18" height="5"/><rect x="230" y="210" width="18" height="5"/></g></g>
+<g class="neon nc"><rect x="60" y="192" width="26" height="40" rx="4" fill="#ffd93d" opacity=".9"/><g fill="#5a3a00"><rect x="66" y="200" width="14" height="4"/><rect x="66" y="210" width="14" height="4"/></g></g>
+<g class="neon nd"><rect x="320" y="186" width="30" height="42" rx="4" fill="#9b5cff" opacity=".9"/><g fill="#fff8"><rect x="327" y="194" width="16" height="4"/><rect x="327" y="206" width="16" height="4"/></g></g>
+<g class="glowline" stroke="#56e1ff" stroke-width="2" fill="none"><path d="M0 236 h400"/></g>
+<rect y="238" width="400" height="22" fill="#0e0a20"/>
+<g class="train"><rect x="0" y="222" width="90" height="16" rx="5" fill="#e9eef7"/><rect x="6" y="226" width="16" height="7" rx="2" fill="#2bb3e0"/><rect x="28" y="226" width="16" height="7" rx="2" fill="#2bb3e0"/><rect x="50" y="226" width="16" height="7" rx="2" fill="#2bb3e0"/><rect x="72" y="226" width="12" height="7" rx="2" fill="#ffd978"/></g>
+<g fill="#ffb3c7" opacity=".9"><circle cx="30" cy="248" r="3"/><circle cx="90" cy="250" r="2.4"/><circle cx="200" cy="248" r="3"/><circle cx="300" cy="250" r="2.6"/></g>
+</svg>

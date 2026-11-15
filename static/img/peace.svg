@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260">
+<style>
+  .crane{animation:cfly 16s ease-in-out infinite}
+  .cr2{animation-delay:-5s;animation-duration:19s}
+  .cr3{animation-delay:-10s;animation-duration:22s}
+  @keyframes cfly{0%{transform:translate(-60px,160px) rotate(-6deg)}100%{transform:translate(440px,-20px) rotate(-14deg)}}
+  .halo{animation:hl 7s ease-in-out infinite}
+  @keyframes hl{0%,100%{opacity:.25;transform:scale(1)}50%{opacity:.5;transform:scale(1.06)}}
+  .flame{transform-origin:center bottom;animation:fl2 2.2s ease-in-out infinite}
+  @keyframes fl2{0%,100%{transform:scaleY(1) scaleX(1)}50%{transform:scaleY(1.2) scaleX(.9)}}
+  .ring2{animation:rg2 6s ease-out infinite}
+  @keyframes rg2{0%{transform:scale(.4);opacity:.7}100%{transform:scale(1.8);opacity:0}}
+</style>
+<defs>
+  <linearGradient id="sb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2d4a6b"/><stop offset=".55" stop-color="#9ab6cf"/><stop offset="1" stop-color="#f3e4cf"/></linearGradient>
+</defs>
+<rect width="400" height="260" fill="url(#sb)"/>
+<g class="halo"><circle cx="200" cy="96" r="70" fill="#fff6dc"/></g>
+<circle cx="200" cy="96" r="34" fill="#fffaf0" opacity=".95"/>
+<path d="M0 182 q80 -22 160 -6 q90 18 240 -10 v94 H0Z" fill="#6e8a6a"/>
+<path d="M0 204 q110 -16 220 4 q90 16 180 -6 v58 H0Z" fill="#54705a"/>
+<g>
+  <rect x="150" y="150" width="100" height="56" fill="#8e8578" opacity=".9"/>
+  <g fill="#6f675c"><rect x="162" y="162" width="12" height="20"/><rect x="186" y="162" width="12" height="20"/><rect x="210" y="162" width="12" height="20"/><rect x="226" y="162" width="12" height="20"/></g>
+  <ellipse cx="200" cy="146" rx="30" ry="10" fill="none" stroke="#5f5a52" stroke-width="4"/>
+  <path d="M176 146 q24 -30 48 0" fill="none" stroke="#5f5a52" stroke-width="3"/>
+  <path d="M188 146 q12 -34 24 0" fill="none" stroke="#5f5a52" stroke-width="3"/>
+  <rect x="196" y="112" width="8" height="34" fill="#6f675c"/>
+</g>
+<g>
+  <rect x="60" y="196" width="40" height="8" rx="3" fill="#7d7468"/>
+  <rect x="74" y="178" width="12" height="20" fill="#938a7d"/>
+  <g class="flame"><ellipse cx="80" cy="168" rx="7" ry="13" fill="#ffb13d"/><ellipse cx="80" cy="172" rx="4" ry="8" fill="#fff1b8"/></g>
+</g>
+<g stroke="#ffffff" fill="none" stroke-width="2" opacity=".5"><circle class="ring2" cx="80" cy="168" r="14"/></g>
+<g class="crane">
+  <g>
+    <path d="M0 0 l26 -10 l-6 14 l22 -4 l-14 12 l-26 2Z" fill="#fdfdfd"/>
+    <path d="M26 -10 l16 -16 l-4 18Z" fill="#f0f0f0"/>
+    <path d="M-2 2 l-18 8 l20 2Z" fill="#e8e8e8"/>
+    <circle cx="36" cy="-6" r="2" fill="#d7263d" opacity=".8"/>
+  </g>
+</g>
+<g class="crane cr2" opacity=".85">
+  <g transform="scale(.75)">
+    <path d="M0 0 l26 -10 l-6 14 l22 -4 l-14 12 l-26 2Z" fill="#ffe3ea"/>
+    <path d="M26 -10 l16 -16 l-4 18Z" fill="#ffd0dd"/>
+    <path d="M-2 2 l-18 8 l20 2Z" fill="#ffd0dd"/>
+  </g>
+</g>
+<g class="crane cr3" opacity=".8">
+  <g transform="scale(.6)">
+    <path d="M0 0 l26 -10 l-6 14 l22 -4 l-14 12 l-26 2Z" fill="#dff0ff"/>
+    <path d="M26 -10 l16 -16 l-4 18Z" fill="#c7e4ff"/>
+    <path d="M-2 2 l-18 8 l20 2Z" fill="#c7e4ff"/>
+  </g>
+</g>
+<g fill="#f6efe0" opacity=".9"><circle cx="300" cy="214" r="4"/><circle cx="318" cy="220" r="3"/><circle cx="286" cy="222" r="3"/></g>
+</svg>

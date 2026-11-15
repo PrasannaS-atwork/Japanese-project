@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260">
+<style>
+  .lan{transform-origin:top center;animation:sw 4.2s ease-in-out infinite}
+  .l2b{animation-duration:5s;animation-delay:-1s}.l3b{animation-duration:3.6s;animation-delay:-2s}
+  .l4b{animation-duration:4.8s;animation-delay:-2.6s}.l5b{animation-duration:4s;animation-delay:-3.2s}
+  @keyframes sw{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+  .flick{animation:fk 2.6s ease-in-out infinite}
+  @keyframes fk{0%,100%{opacity:.5}50%{opacity:.95}}
+  .fan{transform-origin:60px 206px;animation:fo 7s ease-in-out infinite}
+  @keyframes fo{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(10deg)}}
+  .spark{animation:sp 4s ease-out infinite}
+  .k2{animation-delay:1.3s}.k3{animation-delay:2.6s}
+  @keyframes sp{0%{transform:translateY(0) scale(1);opacity:.9}100%{transform:translateY(-40px) scale(.2);opacity:0}}
+</style>
+<defs><linearGradient id="s9" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1030"/><stop offset=".7" stop-color="#5a2340"/><stop offset="1" stop-color="#9c4435"/></linearGradient></defs>
+<rect width="400" height="260" fill="url(#s9)"/>
+<g fill="#fff" opacity=".6"><circle cx="60" cy="24" r="1.2"/><circle cx="140" cy="16" r="1"/><circle cx="260" cy="28" r="1.3"/><circle cx="350" cy="18" r="1"/></g>
+<path d="M0 46 h400" stroke="#6b4a2a" stroke-width="5"/>
+<g>
+  <g class="lan"><rect x="46" y="48" width="2" height="16" fill="#6b4a2a"/><g class="flick"><ellipse cx="47" cy="86" rx="20" ry="24" fill="#ff5a3c"/></g><ellipse cx="47" cy="86" rx="20" ry="24" fill="none" stroke="#a82b1c" stroke-width="1.5"/><rect x="33" y="62" width="28" height="4" fill="#7a2418"/><rect x="33" y="106" width="28" height="4" fill="#7a2418"/><text x="47" y="92" font-size="14" text-anchor="middle" fill="#fff4e0" font-family="serif">祭</text></g>
+  <g class="lan l2b"><rect x="126" y="48" width="2" height="22" fill="#6b4a2a"/><g class="flick"><ellipse cx="127" cy="94" rx="17" ry="21" fill="#ffd34d"/></g><ellipse cx="127" cy="94" rx="17" ry="21" fill="none" stroke="#b5841a" stroke-width="1.5"/><rect x="115" y="74" width="24" height="4" fill="#8a6412"/><rect x="115" y="110" width="24" height="4" fill="#8a6412"/></g>
+  <g class="lan l3b"><rect x="206" y="48" width="2" height="14" fill="#6b4a2a"/><g class="flick"><ellipse cx="207" cy="84" rx="21" ry="25" fill="#ff5a3c"/></g><ellipse cx="207" cy="84" rx="21" ry="25" fill="none" stroke="#a82b1c" stroke-width="1.5"/><rect x="192" y="60" width="30" height="4" fill="#7a2418"/><rect x="192" y="104" width="30" height="4" fill="#7a2418"/><text x="207" y="90" font-size="14" text-anchor="middle" fill="#fff4e0" font-family="serif">灯</text></g>
+  <g class="lan l4b"><rect x="286" y="48" width="2" height="26" fill="#6b4a2a"/><g class="flick"><ellipse cx="287" cy="96" rx="16" ry="20" fill="#ffe08a"/></g><ellipse cx="287" cy="96" rx="16" ry="20" fill="none" stroke="#b5841a" stroke-width="1.5"/><rect x="276" y="78" width="22" height="4" fill="#8a6412"/><rect x="276" y="112" width="22" height="4" fill="#8a6412"/></g>
+  <g class="lan l5b"><rect x="356" y="48" width="2" height="18" fill="#6b4a2a"/><g class="flick"><ellipse cx="357" cy="88" rx="19" ry="23" fill="#ff5a3c"/></g><ellipse cx="357" cy="88" rx="19" ry="23" fill="none" stroke="#a82b1c" stroke-width="1.5"/><rect x="344" y="66" width="26" height="4" fill="#7a2418"/><rect x="344" y="108" width="26" height="4" fill="#7a2418"/></g>
+</g>
+<path d="M0 190 q100 -18 200 0 q100 18 200 0 v70 H0Z" fill="#2a1830"/>
+<g class="fan"><g><path d="M60 206 L18 150 a54 54 0 0 1 84 0Z" fill="#f6efe0"/><path d="M60 206 L18 150 a54 54 0 0 1 84 0Z" fill="none" stroke="#b03a2e" stroke-width="2"/><g stroke="#d9c7a3" stroke-width="1"><path d="M60 206 L28 156"/><path d="M60 206 L44 146"/><path d="M60 206 L60 142"/><path d="M60 206 L76 146"/><path d="M60 206 L92 156"/></g><circle cx="60" cy="206" r="4" fill="#b03a2e"/><circle cx="60" cy="172" r="12" fill="#d7263d" opacity=".85"/></g></g>
+<g>
+  <ellipse cx="300" cy="214" rx="36" ry="42" fill="#f8f1e4"/>
+  <path d="M264 212 q36 -26 72 0" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <g fill="#2b2b2b"><ellipse cx="286" cy="206" rx="6" ry="4"/><ellipse cx="314" cy="206" rx="6" ry="4"/></g>
+  <path d="M290 232 q10 8 20 0" fill="none" stroke="#c0392b" stroke-width="3" stroke-linecap="round"/>
+  <path d="M276 190 q24 -14 48 0" fill="none" stroke="#2b2b2b" stroke-width="3"/>
+  <circle cx="300" cy="222" r="4" fill="#e8a0a0" opacity=".7"/>
+</g>
+<g fill="#ffd978"><circle class="spark" cx="170" cy="200" r="2.6"/><circle class="spark k2" cx="200" cy="208" r="2"/><circle class="spark k3" cx="232" cy="198" r="2.4"/></g>
+</svg>

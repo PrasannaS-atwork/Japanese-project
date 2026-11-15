@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260">
+<style>
+  .koi{animation:swim 14s ease-in-out infinite}
+  .koi2{animation:swim2 18s ease-in-out infinite}
+  @keyframes swim{0%{transform:translate(40px,0) rotate(4deg)}50%{transform:translate(280px,16px) rotate(-6deg)}100%{transform:translate(40px,0) rotate(4deg)}}
+  @keyframes swim2{0%{transform:translate(300px,24px) scaleX(-1)}50%{transform:translate(90px,4px) scaleX(-1)}100%{transform:translate(300px,24px) scaleX(-1)}}
+  .tail{transform-origin:left center;animation:tl 1.2s ease-in-out infinite}
+  @keyframes tl{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(12deg)}}
+  .rings{animation:rg 4s ease-out infinite}
+  @keyframes rg{0%{transform:scale(.3);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+  .pet3{animation:pf3 10s linear infinite}.q2{animation-delay:3.4s}
+  @keyframes pf3{0%{transform:translate(0,-10px) rotate(0)}100%{transform:translate(-50px,270px) rotate(360deg)}}
+</style>
+<defs>
+  <linearGradient id="s6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe5c6"/><stop offset="1" stop-color="#fdf3dc"/></linearGradient>
+  <linearGradient id="pond" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5fa3a8"/><stop offset="1" stop-color="#2e6e74"/></linearGradient>
+</defs>
+<rect width="400" height="260" fill="url(#s6)"/>
+<g fill="#7fae6d"><path d="M0 120 q70 -34 150 -10 q90 26 170 -14 q40 -20 80 -2 v40 H0Z"/></g>
+<g fill="#5f9456"><path d="M0 150 q110 -22 220 2 q90 20 180 -10 v24 H0Z"/></g>
+<rect y="160" width="400" height="100" fill="url(#pond)"/>
+<g stroke="#cdeef0" stroke-width="2" fill="none" opacity=".5"><ellipse class="rings" cx="110" cy="206" rx="18" ry="6"/><ellipse class="rings" cx="280" cy="226" rx="18" ry="6" style="animation-delay:2s"/></g>
+<g class="koi"><g><ellipse cx="0" cy="196" rx="20" ry="8" fill="#fdfdfd"/><ellipse cx="-6" cy="194" rx="7" ry="5" fill="#e8543f"/><ellipse cx="8" cy="198" rx="5" ry="3.6" fill="#e8543f"/><g class="tail"><path d="M18 196 l16 -8 v16Z" fill="#fff" opacity=".9"/></g><circle cx="-16" cy="194" r="1.6" fill="#222"/></g></g>
+<g class="koi2"><g><ellipse cx="0" cy="214" rx="16" ry="6.5" fill="#ffd36b"/><ellipse cx="-4" cy="212" rx="6" ry="4" fill="#f09326"/><g class="tail"><path d="M15 214 l13 -7 v14Z" fill="#ffe7a8" opacity=".9"/></g><circle cx="-12" cy="212" r="1.4" fill="#222"/></g></g>
+<g fill="#4f8f5e"><path d="M60 178 a12 12 0 1 0 24 0 a12 12 0 0 0 -24 0Z"/><path d="M300 190 a10 10 0 1 0 20 0 a10 10 0 0 0 -20 0Z"/></g>
+<g fill="#ffb3cc"><circle cx="72" cy="172" r="4"/><circle cx="310" cy="184" r="3.4"/></g>
+<g><path d="M120 196 q80 -62 170 0" stroke="#c0392b" stroke-width="10" fill="none" stroke-linecap="round"/>
+<path d="M130 190 q78 -56 156 0" stroke="#e05a45" stroke-width="4" fill="none"/>
+<g stroke="#c0392b" stroke-width="4"><path d="M146 178 v22"/><path d="M186 164 v34"/><path d="M226 162 v36"/><path d="M266 176 v24"/></g></g>
+<g fill="#9b9b93"><rect x="34" y="150" width="20" height="8"/><rect x="38" y="132" width="12" height="20"/><path d="M28 132 h32 l-7 -11 h-18Z"/><rect x="36" y="112" width="16" height="11" fill="#c9c9bf"/><path d="M34 112 h20 l-10 -9Z"/></g>
+<g><path d="M352 150 q-4 -30 4 -44" stroke="#6b4a32" stroke-width="6" fill="none"/>
+<g fill="#e0582f"><circle cx="344" cy="96" r="16"/><circle cx="368" cy="104" r="14"/><circle cx="356" cy="86" r="13"/></g>
+<g fill="#f0894f"><circle cx="350" cy="92" r="6"/></g></g>
+<g class="pet3" fill="#f3a35f"><path d="M330 70 q7 4 0 10 q-7 -6 0 -10Z"/></g>
+<g class="pet3 q2" fill="#ffc2d6"><ellipse cx="90" cy="60" rx="4" ry="2.8"/></g>
+</svg>
